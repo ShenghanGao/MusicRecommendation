@@ -42,6 +42,12 @@ def mapToPearson(((artist1, userAndRatings1), (artist2, userAndRatings2))):
 
     return ((artist1, artist2), numerator / denominator)
 
+def flatMapToWhole(((artist1, artist2), coValue)):
+    if artist1 == artist2:
+        return [((artist1, artist2), coValue)]
+    else:
+        return [((artist1, artist2), coValue), ((artist2, artist1), coValue)]
+
 def mapFormatting(((artist1, artist2), coValue)):
     key = artist1
     value = artist2 + "," + str(coValue)
@@ -59,6 +65,7 @@ def co_matrix(file_name, output="co_matrix.out"):
                     .filter(lambda x: x[0][0] <= x[1][0])\
                     .map(mapToPearson)\
                     .filter(lambda x: x[1] != 0)\
+                    .flatMap(flatMapToWhole)\
                     .map(mapFormatting)\
                     .reduceByKey(reduceToCo)
     co_pearson.map(lambda x: x[0] + " " + x[1]).coalesce(1).saveAsTextFile(output)
