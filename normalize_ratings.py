@@ -51,7 +51,6 @@ def normalize_ratings(file_name, output="normalized_ratings.out"):
 
     normalizedRatings = file.map(decouplingNormalize)\
                             .flatMap(flatMapToLines)
-    print normalizedRatings.collect()
 
     normalizedRatings.map(lambda x: x[0] + "\t" + x[1]).coalesce(1).saveAsTextFile(output)
 

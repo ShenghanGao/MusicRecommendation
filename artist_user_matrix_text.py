@@ -24,7 +24,7 @@ def artist_user_matrix(file_name, output="filtered_user_matrix.out"):
 
     filteredUa = file.map(mapLine)\
                  .groupByKey()\
-                 .filter(lambda x: len(x[1]) >= 2)\
+                 .filter(lambda x: len(x[1]) >= 50)\
                  .flatMap(flatMapArtist)\
                  .reduceByKey(reduceByKeyToLine)
 

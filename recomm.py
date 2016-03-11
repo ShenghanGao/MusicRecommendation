@@ -46,6 +46,8 @@ def co_matrix(user_mtx, co_mtx, output="recomm.out"):
                       #.take(1)
 
     print "recomm:\n", recomm
+
+    sc.parallelize(recomm).map(lambda x: x[0] + " " + str(x[1])).coalesce(1).saveAsTextFile(output)
     
     # co_pearson.map(lambda x: x[0] + " " + x[1]).coalesce(1).saveAsTextFile(output)
 

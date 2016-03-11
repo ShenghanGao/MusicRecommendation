@@ -1,0 +1,2 @@
+rm -rf normalized_ratings.out/
+time spark-submit --master local[4] normalize_ratings.py filtered_user_matrix.out/part-00000

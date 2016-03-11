@@ -1,0 +1,1 @@
+time ./filter 1000000.txt 1000000_filtered.txt 50

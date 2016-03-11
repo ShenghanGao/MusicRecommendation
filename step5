@@ -1,0 +1,2 @@
+rm -rf co_matrix.out/
+time spark-submit --master local[4] co_pearson.py ua_lines_to_au_line.out/part-00000
