@@ -1,0 +1,2 @@
+rm -rf recomm.out/
+time spark-submit --master local[4] recomm_weighed.py $1 artist_avg.out/part-00000 co_matrix.out/part-00000

@@ -84,8 +84,6 @@ int main(int argc, char** argv) {
                 break;
         }
     }
-
-    fprintf(fw, "\n");
     fclose(fr);
     fclose(fw);
     return 0;
