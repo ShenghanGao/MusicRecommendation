@@ -49,6 +49,9 @@ echo "STEP6"
 spark-submit recomm_weighed.py /user/$USER/normalized_user.txt /user/$USER/artist_avg.out/part-00000 co_matrix.out/part-00000
 
 #copy out
+rm -rf co_matrix.out/ artist_avg.out/ recomm.out/ 
+hadoop dfs -copyToLocal co_matrix.out $WORKDIR
+hadoop dfs -copyToLocal artist_avg.out $WORKDIR
 hadoop dfs -copyToLocal recomm.out $WORKDIR
 
 ### Shut down Spark and HDFS
