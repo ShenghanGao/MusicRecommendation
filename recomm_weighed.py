@@ -40,7 +40,7 @@ def mapCoMtxLineToWeighted(line):
         return (artist, predictedRating)
 
 def co_matrix(user_vec, artist_avg_rating, co_mtx, output="recomm.out"):
-    sc = SparkContext("local[8]", "Recomm")
+    sc = SparkContext()
     user_vector = sc.textFile(user_vec)
     art_avg_rt = sc.textFile(artist_avg_rating)
     co_matrix = sc.textFile(co_mtx)

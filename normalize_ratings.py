@@ -46,7 +46,7 @@ def flatMapToLines((user, artistAndRatings)):
     return li
 
 def normalize_ratings(file_name, output="normalized_ratings.out"):
-    sc = SparkContext("local[8]", "UserArtistMatrix")
+    sc = SparkContext()
     file = sc.textFile(file_name)
 
     normalizedRatings = file.map(decouplingNormalize)\

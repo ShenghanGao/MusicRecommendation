@@ -25,7 +25,7 @@ def reduceToLine(value1, value2):
     return value1 + "\t" + value2
 
 def ua_lines_to_au_line(file_name, au_out="ua_lines_to_au_line.out", artistAvgOut="artist_avg.out"):
-    sc = SparkContext("local[8]", "uaLinesToAuLine")
+    sc = SparkContext()
     file = sc.textFile(file_name)
 
     # au = file.map(mapLine).reduceByKey(reduceToLine)

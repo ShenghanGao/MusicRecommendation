@@ -19,7 +19,7 @@ def reduceByKeyToLine(value1, value2):
     return value1 + "\t" + value2
 
 def artist_user_matrix(file_name, output="filtered_user_matrix.out"):
-    sc = SparkContext("local[8]", "FilteredUserMatrix")
+    sc = SparkContext()
     file = sc.textFile(file_name)
 
     filteredUa = file.map(mapLine)\

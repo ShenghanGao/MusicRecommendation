@@ -57,7 +57,7 @@ def reduceToCo(value1, value2):
     return value1 + "\t" + value2
 
 def co_matrix(file_name, output="co_matrix.out"):
-    sc = SparkContext("local[8]", "UserArtistMatrix")
+    sc = SparkContext()
     file = sc.textFile(file_name)
 
     artistCom = file.map(mapLine)
