@@ -11,10 +11,10 @@ use filter:
 
 run the complete flow locally:
 ./runlocal inputUserRatingsData targetUser_normalized
-run only the recommendation for a specific user locally (must have artist-user matrix and artist average rating vector localy):
+run only the recommendation for a specific user locally (must have artist-user matrix and artist average rating vector locally):
 ./step6 targetUser
 
-run the compelte flow on Comet:
+run the complete flow on Comet:
 ./run inputUserRatingsData targetUser_normalized
 
 normalizeRatingVector.py & normalizeRatingVector_AnotherFormat.py are used to calculate normalized user rating vector
