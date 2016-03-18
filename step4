@@ -1,3 +1,5 @@
+#!/bin/bash
+
 rm -rf ua_lines_to_au_line.out/ artist_avg.out/
 time spark-submit --master local[4] uaLinesToAuLine.py normalized_ratings.out/part-00000
 rm -rf normalized_ratings.out/

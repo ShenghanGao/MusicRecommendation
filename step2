@@ -1,2 +1,4 @@
+#!/bin/bash
+
 rm -rf filtered_user_matrix.out/
 time spark-submit --master local[4] artist_user_matrix_text.py $1
