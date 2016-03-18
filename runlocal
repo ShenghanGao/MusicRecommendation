@@ -1,0 +1,7 @@
+#!/bin/bash
+./step2 $1
+./step3
+./step4
+./step5
+./step6 $2
+
